@@ -1,0 +1,50 @@
+import React ,{useState} from 'react';
+import {StyleSheet,Text, View,TouchableOpacity} from 'react-native';
+
+export default function App(){
+  const [sayac, setSayac]= useState(0);
+
+  return(
+    <View style={styles.container}>
+      <Text> {sayac}</Text>
+     <TouchableOpacity style={styles.button} onPress={()=> setSayac(sayac+1)}>
+        <Text style={styles.button_text}> Artir</Text>
+     </TouchableOpacity>
+     <TouchableOpacity style={styles.button} onPress={()=> setSayac(sayac-1)}>
+        <Text style={styles.button_text}> Azalt</Text>
+     </TouchableOpacity>
+     <TouchableOpacity style={styles.button} onPress={()=> setSayac(0)}>
+        <Text style={styles.button_text}> Sıfırla</Text>
+     </TouchableOpacity>
+    </View>
+  );
+
+}
+const styles= StyleSheet.create({
+
+  container:{
+    flex:1,
+    backgroundColor: 'iceblue',
+    alignItems:'center',
+    justifyContent:'center',
+  },
+  button:{
+     alignItems: 'center',
+    justifyContent: 'center',
+    padding:20,
+    marginTop:10,
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: 'green',
+  },
+  button_text:{
+     fontSize: 16,
+    lineHeight: 21,
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+    color: 'white',
+  }
+
+});
